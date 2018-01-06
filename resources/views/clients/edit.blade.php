@@ -5,7 +5,9 @@
         <h1>Edit Client</h1>
         <div class="row">
             <div class="col-md-8">
-                {!! Form::open(['url' => 'clients/'.$client->id,'method' => 'put']) !!}
+
+                {!! Form::model($client, ['route' => ['clients.update', $client->id]]) !!}
+
                     @include('clients._fields')
 
                     {{ Form::submit('Submit',['class'=>'btn btn-default']) }}

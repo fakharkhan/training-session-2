@@ -20,9 +20,13 @@
         <td>{{ $client->phone }}</td>
         <td>{{ $client->email }}</td>
 
-        <td>
-            <a href="/clients/{{ $client->id }}/edit">Edit</a> |
-            <a href="/clients/{{ $client->id }}/edit">Delete</a>
+        <td style="display: inline-flex">
+            {{--<a href="{{ route('clients.edit',$client->id) }}">Edit</a> |--}}
+            {!! link_to_route('clients.edit', 'Edit',[$client->id],['class'=>'btn btn-info']) !!}
+
+            {!! Form::open(['route' => ['clients.destroy',$client->id],'method' => 'DELETE']) !!}
+                {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
+            {!! Form::close() !!}
         </td>
     </tr>
     @endforeach
