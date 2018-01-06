@@ -15,7 +15,9 @@
 
     @foreach($clients as $client)
     <tr>
-        <td>{{ $client }}</td>
+        <td>{{ $client->name }}</td>
+        <td>{{ $client->phone }}</td>
+        <td>{{ $client->email }}</td>
     </tr>
     @endforeach
 </table>

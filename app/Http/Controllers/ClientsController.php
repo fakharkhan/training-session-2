@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use Illuminate\Http\Request;
 
 class ClientsController extends Controller
@@ -10,7 +11,7 @@ class ClientsController extends Controller
 
     public function index()
     {
-        $clients = ['fakhar','khan','ali','usama','ishfaq','aftab'];
+        $clients = Client::all();
         return view('clients.index',compact('clients'));
     }
 

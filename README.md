@@ -52,6 +52,9 @@ Laravel follow REST architecture
 ##4.Controllers   
  To create a controller via command line: php artisan make:controller ClientsController
  To create a controller with resources functions: php artisan make:controller ClientsController --resource
+ 
+##5. Model
+ To create a model via artisan: php artisan make:model Client
    
 
  
