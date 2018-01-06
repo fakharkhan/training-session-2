@@ -22,17 +22,16 @@ Route::group(array('prefix' => 'clients'), function()
     });
 
     Route::get('{name}/detail', function ($name) {
-        return "<h1>Detail of Client: ".$name." </h1>";
+        return view('clients.detail',compact('name'));
     });
 
     Route::get('/', function () {
-        return "<h1>List of Clients</h1>";
+
+        $clients = ['fakhar','khan','ali','usama','ishfaq'];
+        return view('clients.index',compact('clients'));
     });
 
 });
-
-
-
 
 
 Route::get('/about', function () {

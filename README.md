@@ -45,6 +45,9 @@ Laravel follow REST architecture
        return "<h1>Detail of Client ".$param." </h1>";
    });
   
+3.Views
+  Laravel uses Template Engine called Blade: https://laravel.com/docs/5.5/blade
+  We use Blade Directives, sample direct is {{ }} , which is used to print 
    
    
 
