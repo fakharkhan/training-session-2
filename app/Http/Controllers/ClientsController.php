@@ -23,16 +23,14 @@ class ClientsController extends Controller
     public function create()
     {
         $client = new Client();
-        $client->phone ='+92';
+
         return view('clients.create',compact('client'));
     }
 
     public function store(Request $request)
     {
         //receives request
-       // $data = $request->all();
 
-       // $data['phone'] = '+92'.$data['phone'];
 
         Client::create($request->all());
 

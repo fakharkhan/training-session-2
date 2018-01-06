@@ -1,4 +1,4 @@
-{{ csrf_field() }}
+
 <div class="form-group">
     {{ Form::label('name', 'Client Name') }}
     {{ Form::text('name',$client->name,['class'=>'form-control','placeholder'=>'Client Name']) }}

@@ -20,7 +20,10 @@
         <td>{{ $client->phone }}</td>
         <td>{{ $client->email }}</td>
 
-        <td><a href="/clients/{{ $client->id }}/edit">Edit</a></td>
+        <td>
+            <a href="/clients/{{ $client->id }}/edit">Edit</a> |
+            <a href="/clients/{{ $client->id }}/edit">Delete</a>
+        </td>
     </tr>
     @endforeach
 </table>
