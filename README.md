@@ -55,6 +55,8 @@ Laravel follow REST architecture
  
 ##5. Model
  To create a model via artisan: php artisan make:model Client
+ 
+##6. Migration 
    
 
  

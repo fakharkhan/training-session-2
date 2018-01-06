@@ -28,21 +28,29 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
         //receives request
-        $data = $request->all();
-       // dd($data['name']);
-        return $data;
+       // $data = $request->all();
+
+       // $data['phone'] = '+92'.$data['phone'];
+
+        Client::create($request->all());
+
+        return redirect()->to('clients');
     }
 
-    public function edit()
+    public function edit($id)
     {
-
+        $client = Client::find($id);
+        return view('clients.edit',compact('client'));
     }
 
 
-    public function update()
+    public function update(Request $request,$id)
     {
+        $client = Client::find($id);
 
+        $client->update($request->all());
 
+        return redirect()->to('clients');
     }
 
 
