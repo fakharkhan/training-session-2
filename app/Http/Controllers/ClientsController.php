@@ -22,7 +22,9 @@ class ClientsController extends Controller
 
     public function create()
     {
-        return view('clients.create');
+        $client = new Client();
+        $client->phone ='+92';
+        return view('clients.create',compact('client'));
     }
 
     public function store(Request $request)
