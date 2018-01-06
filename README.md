@@ -35,20 +35,23 @@ Model:
    
 ##Routes
 Laravel follow REST architecture
-1. Type of routes
+##1. Type of routes
    GET - to receive data from web server
    POST - to create/insert data on web server
    PUT - to update data
    Delete - to destroy / delete data
-2. Defining Routes with params   
+##2. Defining Routes with params   
    Route::get('/clients/{param}', function ($param) {
        return "<h1>Detail of Client ".$param." </h1>";
    });
   
-3.Views
+##3.Views
   Laravel uses Template Engine called Blade: https://laravel.com/docs/5.5/blade
   We use Blade Directives, sample direct is {{ }} , which is used to print 
    
+##4.Controllers   
+ To create a controller via command line: php artisan make:controller ClientsController
+ To create a controller with resources functions: php artisan make:controller ClientsController --resource
    
 
  
