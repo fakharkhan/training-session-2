@@ -21,12 +21,15 @@ class ClientsController extends Controller
 
     public function create()
     {
-
+        return view('clients.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+        //receives request
+        $data = $request->all();
+       // dd($data['name']);
+        return $data;
     }
 
     public function edit()
