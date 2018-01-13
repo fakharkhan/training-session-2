@@ -13,7 +13,32 @@ class ClientsController extends Controller
 
     public function index()
     {
-        $clients = Client::all();
+        $clients = new Client();
+
+      //  $clients = $clients->orderBy('id')->get()->sortBy('name');
+
+        $clients = $clients->all();
+
+        //$clients = $clients->where('id',1)->get();
+
+      //  $clients = $clients->where('id',1)->get()->where('id', 2);
+
+      //  $clients = $clients->all()->sortBy('name');
+
+      //  $types = ['Staff','Local','Foreigner'];
+
+     //   $types = collect($types); //convert array into collection
+
+    //    dd($types);
+
+      //  dd(new Client(),$clients, (new Client())->all());
+
+
+      //  return $clients;
+
+      // $clients = $clients->chunk(2);
+
+    //    return $clients;
 
         return view('clients.index',compact('clients'));
     }
