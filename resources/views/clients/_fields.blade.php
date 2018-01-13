@@ -13,3 +13,8 @@
     <label for="clientEmail">Email</label>
     {{ Form::text('email',$client->email,['class'=>'form-control','placeholder'=>'Client Email']) }}
 </div>
+
+<div class="form-group">
+    <label for="clientEmail">Image</label>
+    {{ Form::file('image') }}
+</div>

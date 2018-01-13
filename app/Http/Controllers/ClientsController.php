@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\User;
 use Illuminate\Http\Request;
 
 class ClientsController extends Controller
@@ -12,6 +13,17 @@ class ClientsController extends Controller
     public function index()
     {
         $clients = Client::all();
+
+    //    $types = ['Staff','Local','International'];
+      //  return $clients;
+
+   //     return response()->json(['clients'=>$clients,'type'=>$types],200);
+       // return response()->json(['message'=>'clients not found'],404);
+
+        //return redirect()->intended();
+       
+        // dd(redirect());
+
         return view('clients.index',compact('clients'));
     }
 
@@ -30,6 +42,20 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
         //receives request
+
+        //$request->all()
+        //$request->name
+        //$request['name']
+       // dd($request->all(),$request->only('name'),$request->except('name'));
+       // dd($request,$request->all(),$request->only('name'),$request->except('name'));
+
+      // dd($request->hasFile('image'),$request->image);
+
+      //  if($request->hasFile('image'))
+      //  {
+       //     $request->image->store('uploads');
+            //$request->image->storeAs('uploads', 'client_image.png');
+      //  }
 
 
         Client::create($request->all());
