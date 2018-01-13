@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Http\Requests\ClientFormRequest;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -13,16 +14,6 @@ class ClientsController extends Controller
     public function index()
     {
         $clients = Client::all();
-
-    //    $types = ['Staff','Local','International'];
-      //  return $clients;
-
-   //     return response()->json(['clients'=>$clients,'type'=>$types],200);
-       // return response()->json(['message'=>'clients not found'],404);
-
-        //return redirect()->intended();
-
-        // dd(redirect());
 
         return view('clients.index',compact('clients'));
     }
@@ -39,19 +30,9 @@ class ClientsController extends Controller
         return view('clients.create',compact('client'));
     }
 
-    public function store(Request $request)
+    public function store(ClientFormRequest $request)
     {
         //receives request
-
-      //      dd($request->old('name'));
-
-        $rules=[
-            'name' => 'required|max:25',
-            'phone'=>'regex:/^[2-9]\d{2}-\d{3}-\d{4}$/',
-            'email'=>''
-        ];
-
-        $request->validate($rules);
 
 
         Client::create($request->all());
@@ -66,17 +47,9 @@ class ClientsController extends Controller
     }
 
 
-    public function update(Request $request,$id)
+    public function update(ClientFormRequest $request,$id)
     {
 
-        $rules=[
-            'name' => 'required|max:25',
-            'phone'=>'regex:/^[2-9]\d{2}-\d{3}-\d{4}$/',
-            'email'=>''
-        ];
-
-        $request->validate($rules);
-        
         $client = Client::find($id);
 
         $client->update($request->all());

@@ -14,8 +14,8 @@
 </div>
 
 <div class="form-group">
-    <label for="clientPhone">Phone</label>
-    {{ Form::text('phone',$client->phone,['class'=>'form-control','placeholder'=>'Client Phone']) }}
+    <label for="clientPhone">Phone (xxx-xxx-xxxx)</label>
+    {{ Form::text('phone',$client->phone,['class'=>'form-control','placeholder'=>'xxx-xxx-xxxx']) }}
 </div>
 
 <div class="form-group">
