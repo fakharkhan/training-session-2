@@ -14,7 +14,7 @@
         <td>Action</td>
     </tr>
 
-    @foreach($clients as $client)
+    @foreach(clients() as $client)
     <tr>
         <td>{{ $client->name }}</td>
         <td>{{ $client->phone }}</td>

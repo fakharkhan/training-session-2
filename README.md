@@ -57,6 +57,17 @@ Laravel follow REST architecture
  To create a model via artisan: php artisan make:model Client
  
 ##6. Migration 
+
+
+##Adding Custom files to laravel
+1. create file
+2. add information in composer to json auto load section
+
+"files": [
+            "app/Http/helpers.php"
+        ],`
+`
+3. run `composer dump-autoload`` command
    
 
  

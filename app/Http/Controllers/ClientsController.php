@@ -13,12 +13,7 @@ class ClientsController extends Controller
 
     public function index()
     {
-
-     //   session()->put('hidden_price',500);
-
-        $clients = Client::all();
-
-        return view('clients.index',compact('clients'));
+        return view('clients.index');
     }
 
     public function show()
@@ -40,7 +35,7 @@ class ClientsController extends Controller
 
 
         Client::create($request->all());
-        
+
         return redirect()->to('clients');
     }
 
