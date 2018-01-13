@@ -57,6 +57,13 @@ Laravel follow REST architecture
  To create a model via artisan: php artisan make:model Client
  
 ##6. Migration 
+php artisan make:migration create_table_cities --create=cities
+Add a field into existing table:
+ php artisan make:migration add_city_id_field_to_clients --table=clients
+##7 Seeder
+Create: php artisan make:seeder CitiesSeeder
+Execute: php artisan db:seed
+Execute One Seeder class: php artisan db:seed --class=CitiesSeeder
 
 
 ##Adding Custom files to laravel

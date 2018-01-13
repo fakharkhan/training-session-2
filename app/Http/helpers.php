@@ -14,3 +14,11 @@ if (! function_exists('clients')) {
         return \App\Client::all();
     }
 }
+
+if (! function_exists('cities')) {
+
+    function cities()
+    {
+        return \App\City::pluck('name','id');
+    }
+}

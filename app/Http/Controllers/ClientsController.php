@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Client;
 use App\Http\Requests\ClientFormRequest;
 use App\User;
@@ -13,7 +14,9 @@ class ClientsController extends Controller
 
     public function index()
     {
-        return view('clients.index');
+        $clients = Client::with('city')->get();
+
+        return view('clients.index',compact('clients'));
     }
 
     public function show()
@@ -32,7 +35,6 @@ class ClientsController extends Controller
     public function store(ClientFormRequest $request)
     {
         //receives request
-
 
         Client::create($request->all());
 

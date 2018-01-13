@@ -11,15 +11,16 @@
         <td>Name</td>
         <td>Phone</td>
         <td>Email</td>
+        <td>City</td>
         <td>Action</td>
     </tr>
 
-    @foreach(clients() as $client)
+    @foreach($clients as $client)
     <tr>
         <td>{{ $client->name }}</td>
         <td>{{ $client->phone }}</td>
         <td>{{ $client->email }}</td>
-
+        <td>{{ $client->city->name }}</td>
         <td style="display: inline-flex">
             {{--<a href="{{ route('clients.edit',$client->id) }}">Edit</a> |--}}
             {!! link_to_route('clients.edit', 'Edit',[$client->id],['class'=>'btn btn-info']) !!}
