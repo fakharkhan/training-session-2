@@ -18,7 +18,7 @@
 <body>
 <!--Start content-->
 <div class="container">
-@yield('content')
+    @yield('content')
 </div>
 <!--End content-->
 </body>

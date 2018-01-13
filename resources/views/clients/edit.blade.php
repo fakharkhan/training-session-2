@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8">
 
-                {!! Form::model($client, ['route' => ['clients.update', $client->id]]) !!}
+                {!! Form::model($client, ['route' => ['clients.update', $client->id],'method'=>'PUT']) !!}
 
                     @include('clients._fields')
 
